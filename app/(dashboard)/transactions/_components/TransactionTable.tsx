@@ -225,6 +225,15 @@ function TransactionTable({ from, to }: Props) {
             <DownloadIcon className="mr-2 h-4 w-4" />
             Export CSV
           </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            className="ml-auto h-8 lg:flex"
+            onClick={() => window.print()}
+          >
+            Print Table
+          </Button>
+
           <DataTableViewOptions table={table} />
         </div>
       </div>

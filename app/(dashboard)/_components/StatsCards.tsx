@@ -35,14 +35,31 @@ function StatsCards({ from, to, userSettings }: Props) {
   const balance = income - expense;
 
   return (
-    <div className="relative flex w-full flex-wrap gap-2 md:flex-nowrap">
-      <SkeletonWrapper isLoading={statsQuery.isFetching}>
+    <div className="relative flex w-full flex-wrap gap-2 md:flex-nowrap bg-gradient-to-r">
+      <SkeletonWrapper isLoading={statsQuery.isFetching} className="bg-gradient-to-r from-gray-300 via-gray-500 to-gray-700">
         <StatCard
           formatter={formatter}
           value={income}
           title="Income"
           icon={
-            <TrendingUp className="h-12 w-12 items-center rounded-lg p-2 text-emerald-500 bg-emerald-400/10" />
+            <svg className="w-10
+             h-10
+             text-red-200
+             dark:text-white" 
+             aria-hidden="true" 
+             xmlns="http://www.w3.org/2000/svg" 
+             width="24" 
+             height="24" 
+             fill="none" 
+             viewBox="0 0 24 24"> 
+             <path stroke="#60b548"
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2" 
+              d="M4 4.5V19a1 1 0 0 0 1 1h15M7 14l4-4 4 4 5-5m0 0h-3.207M20 9v3.207"
+             /> 
+            </svg>
+
           }
         />
       </SkeletonWrapper>
@@ -53,7 +70,22 @@ function StatsCards({ from, to, userSettings }: Props) {
           value={expense}
           title="Expense"
           icon={
-            <TrendingDown className="h-12 w-12 items-center rounded-lg p-2 text-red-500 bg-red-400/10" />
+            <svg className="w-6 h-6
+             text-gray-800
+              dark:text-white" 
+              aria-hidden="true" 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="24" 
+              height="24" 
+              fill="none" 
+              viewBox="0 0 24 24">
+                <path stroke="currentColor" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M4 4.5V19a1 1 0 0 0 1 1h15M7 10l4 4 4-4 5 5m0 0h-3.207M20 15v-3.207"
+                />
+              </svg>
           }
         />
       </SkeletonWrapper>
@@ -64,7 +96,7 @@ function StatsCards({ from, to, userSettings }: Props) {
           value={balance}
           title="Balance"
           icon={
-            <Wallet className="h-12 w-12 items-center rounded-lg p-2 text-violet-500 bg-violet-400/10" />
+            <TrendingDown className="h-12 w-12 items-center rounded-lg p-2 text-red-500 bg-red-400/10" />
           }
         />
       </SkeletonWrapper>
@@ -96,7 +128,7 @@ function StatCard({
     <Card className="flex h-24 w-full items-center gap-2 p-4">
       {icon}
       <div className="flex flex-col items-start gap-0">
-        <p className="text-muted-foreground">{title}</p>
+        <p>{title}</p>
         <CountUp
           preserveValue
           redraw={false}

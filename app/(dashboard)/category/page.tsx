@@ -24,7 +24,7 @@ function page() {
   return (
     <>
       {/* HEADER */}
-      <div className="border-b bg-card">
+      <div className="border-b bg-card ml-4 mr-4 rounded-md">
         <div className="container flex flex-wrap items-center justify-between gap-6 py-8">
           <div>
             <p className="text-3xl font-bold">Manage</p>
@@ -36,17 +36,6 @@ function page() {
       </div>
       {/* END HEDER */}
       <div className="container flex flex-col gap-4 p-4">
-        <Card>
-          <CardHeader>
-            <CardTitle>Currency</CardTitle>
-            <CardDescription>
-              Set your default currency for transactions
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <CurrencyComboBox />
-          </CardContent>
-        </Card>
         <CategoryList type="income" />
         <CategoryList type="expense" />
       </div>

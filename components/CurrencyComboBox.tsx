@@ -4,14 +4,6 @@ import * as React from "react";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { Button } from "@/components/ui/button";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import {
   Popover,
@@ -48,7 +40,7 @@ export function CurrencyComboBox() {
   const mutation = useMutation({
     mutationFn: UpdateUserCurrency,
     onSuccess: (data: UserSettings) => {
-      toast.success(`Currency updated successuflly 🎉`, {
+      toast.success(`Currency updated successfully 🎉`, {
         id: "update-currency",
       });
 
@@ -128,31 +120,22 @@ function OptionList({
   setSelectedOption,
 }: {
   setOpen: (open: boolean) => void;
-  setSelectedOption: (status: Currency | null) => void;
+  setSelectedOption: (currency: Currency | null) => void;
 }) {
   return (
-    <Command>
-      <CommandInput placeholder="Filter currency..." />
-      <CommandList>
-        <CommandEmpty>No results found.</CommandEmpty>
-        <CommandGroup>
-          {Currencies.map((currency: Currency) => (
-            <CommandItem
-              key={currency.value}
-              value={currency.value}
-              onSelect={(value) => {
-                setSelectedOption(
-                  Currencies.find((priority) => priority.value === value) ||
-                    null
-                );
-                setOpen(false);
-              }}
-            >
-              {currency.label}
-            </CommandItem>
-          ))}
-        </CommandGroup>
-      </CommandList>
-    </Command>
+    <div>
+      {Currencies.map((currency: Currency) => (
+        <div
+          key={currency.value}
+          onClick={() => {
+            setSelectedOption(currency);
+            setOpen(false);
+          }}
+          className="p-2 cursor-pointer hover:bg-gray-100"
+        >
+          {currency.label}
+        </div>
+      ))}
+    </div>
   );
 }

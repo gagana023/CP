@@ -21,9 +21,11 @@ function Navbar() {
 }
 
 const items = [
-  { label: "Dashboard", link: "/" },
+  { label: "Dashboard", link: "/" }, 
   { label: "Transactions", link: "/transactions" },
-  { label: "Manage", link: "/manage" },
+  { label: "My Data", link: "/data"},
+  { label: "Categories", link: "/category" },
+  { label: "FAQ", link: "/faq" },
 ];
 
 function MobileNavbar() {

@@ -36,7 +36,7 @@
     }
 
     .dark {
-      --background: 0 0% 0%;
+      --background: 243 29% 34%;
       --foreground: 0 0% 98%;
 
       --card: 240 10% 3.9%;
@@ -74,3 +74,27 @@
       @apply bg-background text-foreground;
     }
   }
+
+
+  @media print {
+    /* Hide buttons or non-printable items */
+    button, .header, .footer {
+      display: none;
+    }
+    
+    /* Adjust table layout for printing */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    table th, table td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+  }
+
+body{
+  scrollbar-color: purple;
+}
+  

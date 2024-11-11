@@ -1,6 +1,6 @@
 "use client";
 
-import HistoryPeriodSelector from "@/app/(dashboard)/_components/HistoryPeriodSelector";
+import HistoryPeriodSelector from "@/app/(dashboard)/data/HistoryPeriodSelector";
 import SkeletonWrapper from "@/components/SkeletonWrapper";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -45,7 +45,7 @@ function History({ userSettings }: { userSettings: UserSettings }) {
 
   return (
     <div className="container">
-      <h2 className="mt-12 text-3xl font-bold">History</h2>
+      <h2 className="mt-12 text-3xl font-bold">Income and Expense</h2>
       <Card className="col-span-12 mt-2 w-full">
         <CardHeader className="gap-2">
           <CardTitle className="grid grid-flow-row justify-between gap-2 md:grid-flow-col">
