@@ -58,7 +58,7 @@ function MobileNavbar() {
           <LogoMobile />
         </div>
         <div className="flex items-center gap-2">
-          <ThemeSwitcherBtn />
+          <h1>User Details </h1>
           <UserButton afterSignOutUrl="/sign-in" />
         </div>
       </nav>
@@ -83,7 +83,7 @@ function DesktopNavbar() {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <ThemeSwitcherBtn />
+          <h1>User Details:  </h1>
           <UserButton afterSignOutUrl="/sign-in" />
         </div>
       </nav>

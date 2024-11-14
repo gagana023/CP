@@ -129,12 +129,12 @@ function CreateTransactionDialog({ trigger, type }: Props) {
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Description</FormLabel>
+                  <FormLabel>Memo</FormLabel>
                   <FormControl>
                     <Input defaultValue={""} {...field} />
                   </FormControl>
                   <FormDescription>
-                    Transaction description (optional)
+                    (optional)
                   </FormDescription>
                 </FormItem>
               )}
@@ -149,7 +149,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
                     <Input defaultValue={0} type="number" {...field} />
                   </FormControl>
                   <FormDescription>
-                    Transaction amount (required)
+                    (required)
                   </FormDescription>
                 </FormItem>
               )}
@@ -169,7 +169,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
                       />
                     </FormControl>
                     <FormDescription>
-                      Select a category for this transaction
+                      {/* Select a category for this transaction */}
                     </FormDescription>
                   </FormItem>
                 )}
@@ -212,7 +212,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
                         />
                       </PopoverContent>
                     </Popover>
-                    <FormDescription>Select a date for this</FormDescription>
+                    {/* <FormDescription>Select a date for this</FormDescription> */}
                     <FormMessage />
                   </FormItem>
                 )}

@@ -128,9 +128,9 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
             </span>
             category
           </DialogTitle>
-          <DialogDescription>
+          {/* <DialogDescription>
             Categories are used to group your transactions
-          </DialogDescription>
+          </DialogDescription> */}
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -144,7 +144,7 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
                     <Input placeholder="Category" {...field} />
                   </FormControl>
                   <FormDescription>
-                    This is how your category will appear in the app
+                    This is what the category will be called!
                   </FormDescription>
                 </FormItem>
               )}
@@ -193,9 +193,9 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
                       </PopoverContent>
                     </Popover>
                   </FormControl>
-                  <FormDescription>
+                  {/* <FormDescription>
                     This is how your category will appear in the app
-                  </FormDescription>
+                  </FormDescription> */}
                 </FormItem>
               )}
             />

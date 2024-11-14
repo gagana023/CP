@@ -42,7 +42,24 @@ async function page() {
                   variant={"outline"}
                   className="border-emerald-500 bg-emerald-950 text-white hover:bg-emerald-700 hover:text-white"
                 >
-                  New income
+                  Add income
+                  <svg className="w-7
+                  h-7
+                  text-red-200
+                  dark:text-white" 
+                  aria-hidden="true" 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="24" 
+                  height="24" 
+                  fill="none" 
+                  viewBox="0 0 24 24"> 
+                  <path stroke="#60b548"
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="2" 
+                    d="M4 4.5V19a1 1 0 0 0 1 1h15M7 14l4-4 4 4 5-5m0 0h-3.207M20 9v3.207"
+                  /> 
+                  </svg>
                 </Button>
               }
               type="income"
@@ -54,7 +71,24 @@ async function page() {
                   variant={"outline"}
                   className="border-rose-500 bg-rose-950 text-white hover:bg-rose-700 hover:text-white"
                 >
-                  New expense
+                  Add expense
+                  <svg className="w-7 
+                  h-7
+                  text-gray-800
+                    dark:text-white" 
+                    aria-hidden="true" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" 
+                    height="24" 
+                    fill="none" 
+                    viewBox="0 0 24 24">
+                      <path stroke="#cf2f23" 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round" 
+                      stroke-width="2" 
+                      d="M4 4.5V19a1 1 0 0 0 1 1h15M7 10l4 4 4-4 5 5m0 0h-3.207M20 15v-3.207"
+                      />
+                  </svg>
                 </Button>
               }
               type="expense"

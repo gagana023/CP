@@ -1,14 +1,18 @@
+//page.tsx
+//categories tab
+//inside main dashboard folder
+
+
+//"use client" and all imports
+//imports are used for getting components and actions from files and libraries
 "use client";
 
 import CreateCategoryDialog from "@/app/(dashboard)/_components/CreateCategoryDialog";
 import DeleteCategoryDialog from "@/app/(dashboard)/_components/DeleteCategoryDialog";
-import { CurrencyComboBox } from "@/components/CurrencyComboBox";
 import SkeletonWrapper from "@/components/SkeletonWrapper";
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -17,24 +21,25 @@ import { TransactionType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Category } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
-import { PlusSquare, TrashIcon, TrendingDown, TrendingUp } from "lucide-react";
+import { PlusSquare, TrashIcon, } from "lucide-react";
 import React from "react";
 
+
+//main function page
+//job is to output the catogries
 function page() {
   return (
     <>
-      {/* HEADER */}
       <div className="border-b bg-card ml-4 mr-4 rounded-md">
         <div className="container flex flex-wrap items-center justify-between gap-6 py-8">
           <div>
-            <p className="text-3xl font-bold">Manage</p>
+            <p className="text-3xl font-bold">Categories</p>
             <p className="text-muted-foreground">
-              Manage your account settings and categories
+              Can edit categories here!!
             </p>
           </div>
         </div>
       </div>
-      {/* END HEDER */}
       <div className="container flex flex-col gap-4 p-4">
         <CategoryList type="income" />
         <CategoryList type="expense" />
@@ -45,6 +50,12 @@ function page() {
 
 export default page;
 
+
+//function called cateoryList
+//job is to call all current categories
+//access database and makes sure that all categories
+//are properly displayed on the screen
+//important when displaying the income and expenses categories
 function CategoryList({ type }: { type: TransactionType }) {
   const categoriesQuery = useQuery({
     queryKey: ["categories", type],
@@ -61,9 +72,41 @@ function CategoryList({ type }: { type: TransactionType }) {
           <CardTitle className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
               {type === "expense" ? (
-                <TrendingDown className="h-12 w-12 items-center rounded-lg bg-red-400/10 p-2 text-red-500" />
+                <svg className="w-10
+                h-10
+                text-red-200
+                dark:text-white" 
+                aria-hidden="true" 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="24" 
+                height="24" 
+                fill="none" 
+                viewBox="0 0 24 24"> 
+                <path stroke="#60b548"
+                 stroke-linecap="round" 
+                 stroke-linejoin="round" 
+                 stroke-width="2" 
+                 d="M4 4.5V19a1 1 0 0 0 1 1h15M7 14l4-4 4 4 5-5m0 0h-3.207M20 9v3.207"
+                /> 
+               </svg>
               ) : (
-                <TrendingUp className="h-12 w-12 items-center rounded-lg bg-emerald-400/10 p-2 text-emerald-500" />
+                <svg className="w-10 
+            h-10
+             text-gray-800
+              dark:text-white" 
+              aria-hidden="true" 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="24" 
+              height="24" 
+              fill="none" 
+              viewBox="0 0 24 24">
+                <path stroke="#cf2f23" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M4 4.5V19a1 1 0 0 0 1 1h15M7 10l4 4 4-4 5 5m0 0h-3.207M20 15v-3.207"
+                />
+              </svg>
               )}
               <div>
                 {type === "income" ? "Incomes" : "Expenses"} categories

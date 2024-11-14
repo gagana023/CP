@@ -6,7 +6,6 @@ import { Card } from "@/components/ui/card";
 import { DateToUTCDate, GetFormatterForCurrency } from "@/lib/helpers";
 import { UserSettings } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
-import { TrendingDown, TrendingUp, Wallet } from "lucide-react";
 import React, { ReactNode, useCallback, useMemo } from "react";
 import CountUp from "react-countup";
 
@@ -59,7 +58,6 @@ function StatsCards({ from, to, userSettings }: Props) {
               d="M4 4.5V19a1 1 0 0 0 1 1h15M7 14l4-4 4 4 5-5m0 0h-3.207M20 9v3.207"
              /> 
             </svg>
-
           }
         />
       </SkeletonWrapper>
@@ -70,7 +68,8 @@ function StatsCards({ from, to, userSettings }: Props) {
           value={expense}
           title="Expense"
           icon={
-            <svg className="w-6 h-6
+            <svg className="w-10 
+            h-10
              text-gray-800
               dark:text-white" 
               aria-hidden="true" 
@@ -79,7 +78,7 @@ function StatsCards({ from, to, userSettings }: Props) {
               height="24" 
               fill="none" 
               viewBox="0 0 24 24">
-                <path stroke="currentColor" 
+                <path stroke="#cf2f23" 
                 stroke-linecap="round" 
                 stroke-linejoin="round" 
                 stroke-width="2" 
@@ -96,7 +95,23 @@ function StatsCards({ from, to, userSettings }: Props) {
           value={balance}
           title="Balance"
           icon={
-            <TrendingDown className="h-12 w-12 items-center rounded-lg p-2 text-red-500 bg-red-400/10" />
+            <svg className="w-10
+            h-10
+             text-gray-800
+              dark:text-white" 
+              aria-hidden="true" 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="24" 
+              height="24" 
+              fill="none" 
+              viewBox="0 0 24 24">
+                <path stroke="#a621ed" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M3 10h18M6 14h2m3 0h5M3 7v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1Z"
+                />
+              </svg>
           }
         />
       </SkeletonWrapper>
