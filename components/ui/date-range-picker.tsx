@@ -73,7 +73,7 @@ interface Preset {
   label: string;
 }
 
-// Define presets
+// Define PRESETS array, chart filter
 const PRESETS: Preset[] = [
   { name: "today", label: "Today" },
   { name: "yesterday", label: "Yesterday" },

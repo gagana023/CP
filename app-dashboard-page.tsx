@@ -29,17 +29,17 @@ async function page() {
 
   return (
     <div className="h-full bg-background">
-      <div className="mr-7 ml-7 rounded-md bg-gradient-to-r from-sky-500 to-blue-600">
+      <div className="mr-7 ml-7 rounded-md bg-gradient-to-r bg-black">
         {/* from-gray-500 via-gray-600 to-gray-900 previous color */}
         <div className="container flex flex-wrap items-center justify-between gap-6 py-8  ">
-          <p className="text-3xl font-bold text-black">Hello! 😊</p>
+          <p className="text-3xl font-bold">Hello! 😊</p>
 
           <div className="flex items-center gap-3">
             <CreateTransactionDialog
               trigger={
                 <Button
                   variant={"outline"}
-                  className="border-emerald-500 bg-emerald-400 text-black hover:bg-emerald-700 hover:text-white"
+                  className="border-emerald-500 bg-emerald-950 text-white hover:bg-emerald-700 hover:text-white"
                 >
                   Add income
                   <svg
@@ -55,7 +55,7 @@ async function page() {
                     viewBox="0 0 24 24"
                   >
                     <path
-                      stroke="#16a34a"
+                      stroke="#60b548"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
@@ -71,7 +71,7 @@ async function page() {
               trigger={
                 <Button
                   variant={"outline"}
-                  className="border-rose-500 bg-rose-500 text-white hover:bg-rose-700 hover:text-white"
+                  className="border-rose-500 bg-rose-950 text-white hover:bg-rose-700 hover:text-white"
                 >
                   Add expense
                   <svg
@@ -87,7 +87,7 @@ async function page() {
                     viewBox="0 0 24 24"
                   >
                     <path
-                      stroke="#b91c1c"
+                      stroke="#cf2f23"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
